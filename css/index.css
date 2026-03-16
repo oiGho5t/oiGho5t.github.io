@@ -4695,7 +4695,52 @@ figure.highlight pre .javascript .function {
   color: var(--font-color);
   text-shadow: none;
 }
-#page-header.nav-fixed #nav {
+#nav #nav-right-container {
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  -o-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 15px;
+}
+#nav #nav-right-container #search-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#nav #nav-right-container #search-button .search {
+  font-size: 0.85em;
+  padding: 4px 8px;
+  border-radius: 15px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#nav #nav-right-container #search-button .search:hover {
+  background: rgba(255,255,255,0.73);
+}
+#nav.nav-fixed #nav {
   position: fixed;
   top: -60px;
   z-index: 91;
@@ -4710,33 +4755,33 @@ figure.highlight pre .javascript .function {
   will-change: transform;
   backdrop-filter: blur(7px);
 }
-#page-header.nav-fixed #nav #blog-info {
+#nav.nav-fixed #nav #blog-info {
   color: var(--font-color);
 }
-#page-header.nav-fixed #nav #blog-info:hover {
+#nav.nav-fixed #nav #blog-info:hover {
   color: #49b1f5;
 }
-#page-header.nav-fixed #nav #blog-info .site-name {
+#nav.nav-fixed #nav #blog-info .site-name {
   text-shadow: none;
 }
-#page-header.nav-fixed #nav #blog-info > a:first-child {
+#nav.nav-fixed #nav #blog-info > a:first-child {
   display: none;
 }
-#page-header.nav-fixed #nav #blog-info > a:last-child {
+#nav.nav-fixed #nav #blog-info > a:last-child {
   display: inline;
 }
-#page-header.nav-fixed #nav a,
-#page-header.nav-fixed #nav span.site-page,
-#page-header.nav-fixed #nav #toggle-menu {
+#nav.nav-fixed #nav a,
+#nav.nav-fixed #nav span.site-page,
+#nav.nav-fixed #nav #toggle-menu {
   color: var(--font-color);
   text-shadow: none;
 }
-#page-header.nav-fixed #nav a:hover,
-#page-header.nav-fixed #nav span.site-page:hover,
-#page-header.nav-fixed #nav #toggle-menu:hover {
+#nav.nav-fixed #nav a:hover,
+#nav.nav-fixed #nav span.site-page:hover,
+#nav.nav-fixed #nav #toggle-menu:hover {
   color: #49b1f5;
 }
-#page-header.nav-fixed.fixed #nav {
+#nav.nav-fixed.fixed #nav {
   top: 0;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4744,7 +4789,7 @@ figure.highlight pre .javascript .function {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-#page-header.nav-visible:not(.fixed) #nav {
+#nav.nav-visible:not(.fixed) #nav {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -4756,7 +4801,7 @@ figure.highlight pre .javascript .function {
   -ms-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
-#page-header.nav-visible:not(.fixed) + .layout > .aside-content > .sticky_layout {
+#nav.nav-visible:not(.fixed) + .layout > .aside-content > .sticky_layout {
   top: 70px;
   -webkit-transition: top 0.5s;
   -moz-transition: top 0.5s;
@@ -4764,10 +4809,10 @@ figure.highlight pre .javascript .function {
   -ms-transition: top 0.5s;
   transition: top 0.5s;
 }
-#page-header.fixed #nav {
+#nav.fixed #nav {
   position: fixed;
 }
-#page-header.fixed + .layout > .aside-content > .sticky_layout {
+#nav.fixed + .layout > .aside-content > .sticky_layout {
   top: 70px;
   -webkit-transition: top 0.5s;
   -moz-transition: top 0.5s;
@@ -4775,7 +4820,7 @@ figure.highlight pre .javascript .function {
   -ms-transition: top 0.5s;
   transition: top 0.5s;
 }
-#page-header.fixed + .layout #card-toc .toc-content {
+#nav.fixed + .layout #card-toc .toc-content {
   max-height: calc(100vh - 170px);
 }
 #page .page-title {
@@ -8107,6 +8152,20 @@ blockquote.pullquote.right {
   -o-animation: spin 1s linear infinite;
   -ms-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
+}
+@media screen and (max-width: 768px) {
+  #local-search .search-dialog .search-result-list {
+    max-height: calc(var(--search-height) - 200px) !important;
+  }
+}
+#local-search #local-search-stats .search-result-stats {
+  text-align: left;
+}
+#local-search .search-keyword {
+  font-weight: 600;
+}
+#local-search #loading-database ~ * {
+  visibility: hidden;
 }
 @-moz-keyframes spin {
   to {
