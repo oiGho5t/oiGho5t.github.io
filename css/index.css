@@ -4441,10 +4441,9 @@ figure.highlight pre .javascript .function {
 }
 #footer {
   position: relative;
-  background-color: rgba(8,17,20,0.78);
-  border-top: 1px solid rgba(255,255,255,0.14);
-  background-attachment: scroll;
-  background-position: bottom;
+  background-color: transparent;
+  background-attachment: fixed;
+  background-position: center;
   background-size: cover;
 }
 #footer > * {
